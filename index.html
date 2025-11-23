@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang=pt"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <link rel="stylesheet" href="style.css">
+      <script src="index.js"></script>
+    
+
+</head>
+<body>
+    <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[white] after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button-->
+        <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-white/5 hover:text-black focus:outline-2 focus:-outline-offset-1 focus:outline-gray-300"  aria-expanded="false" id="menu-btn">
+          <span class="absolute -inset-0.5"></span>
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex shrink-0 items-center">
+          <img src="imagens/logo.png" alt="Your Company" class="h-8 w-auto" />
+        </div>
+        <div class="hidden sm:ml-6 sm:block">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+            <a href="#" aria-current="page" class="rounded-md hover:bg-gray/5 px-3 py-2 text-sm font-medium text-black">Home</a>
+            <a href="#sobre" class="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-gray/5">Sobre</a>
+            <a href="#loja" class="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-gray/5">Loja online</a>
+            <a href="#contato" class="rounded-md px-3 py-2 text-sm font-medium text-black hover:bg-gray/5">Contato</a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <button type="button" class="relative rounded-full p-1 text-gray-400 hover:text-white">
+          <span class="absolute -inset-1.5"></span>
+          <span class="sr-only">View notifications</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <!-- Profile dropdown -->
+        <el-dropdown class="relative ml-3">
+          <button class="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+            <span class="absolute -inset-1.5"></span>
+            <span class="sr-only">Open user menu</span>
+          </button>
+
+          <el-menu anchor="bottom end" popover class="w-48 origin-top-right rounded-md bg-gray-800 py-1 outline -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Your profile</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Settings</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Sign out</a>
+          </el-menu>
+        </el-dropdown>
+      </div>
+    </div>
+  </div>
+
+  <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+    <div class="space-y-1 px-2 pt-2 pb-3 ">
+      <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+      <a href="#" aria-current="page" class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-200 hover:text-black">Home</a>
+      <a href="#sobre" class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-200 hover:text-black">Sobre</a>
+      <a href="#loja" class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-200 hover:text-black">Loja online</a>
+      <a href="#contato" class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-200 hover:text-black">Contato</a>
+    </div>
+  </el-disclosure>
+</nav>
+
+<section class="bg-[#F5F3EB] py-10"> 
+    
+    <div class="mx-auto w-[96%] h-[500px] lg:h-[650px]">
+
+        <div class="relative w-full h-full overflow-hidden rounded-3xl shadow-2xl group">
+            
+            <img src="./imagens/Cafeteria.jpg" 
+                 onerror="this.src='https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2071&auto=format&fit=crop'"
+                 alt="Lançamento" 
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            
+            <div class="absolute inset-0 bg-black/30"></div>
+
+            <div class="relative p-10 h-full flex flex-col justify-end items-start text-white">
+                <h2 class="text-4xl lg:text-6xl font-light mb-2">Reservas disponiveis</h2> 
+                <p class="text-2xl lg:text-4xl font-medium mb-8">25/26 de novembro</p> 
+                
+                <a href="#" class="inline-block bg-[#9a5833] text-[white] text-base lg:text-lg font-bold py-4 px-10 rounded-lg hover:bg-[#4A3E38] transition-colors">
+                    CLIQUE AQUI E FAÇA SUA RESERVA&rarr;
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section 
+    id="sobre"  class="relative bg-cover bg-center bg-no-repeat pt-16 pb-[200px] px-4"
+    style="background-image: url('imagens/Code&Coffe.jpg')";
+>
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
+        
+        <div class="md:w-3/4">
+            <h1 class="font-bold text-3xl mb-4 text-white">
+                Code & Coffee!
+            </h1>
+            <p class="text-lg text-gray-200">
+                Aqui no Code & Coffee, a única coisa mais quente que o nosso café é o loop infinito de ideias geniais (e, quem sabe, aquele merge request aprovado). Esqueça a linha de comando do tédio e o debugger da solidão. Chega de bugs de ambiente que só a sua cozinha consegue gerar! Nosso Wi-Fi é mais rápido que um script otimizado, e cada xícara vem com uma dose extra de inspiração para você codificar, colaborar ou simplesmente se deliciar enquanto pensa no próximo grande projeto. Afinal, a melhor maneira de resolver um problema complexo é com café quentinho e boa companhia, não é mesmo? Vem pro Code & Coffee, onde seu código flui e seu café nunca esfria!
+            </p>
+    
+        </div>
+        
+        </div>
+</section>
+
+<section id="loja"class="bg-white pt-5 pb-[100px] px-4">
+    <div class="max-w-7xl mx-auto">
+
+        <h1 class="font-bold text-3xl mb-8 text-[#4A3E38] text-center">
+            Compre online com a Code&Coffe
+        </h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+            <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
+                <div class="relative h-48 flex items-center justify-center bg-gray-900">
+                    <img src="imagens/Produto_cafe_chocolate.jpg" alt="Serra de Baturité 250g" class="w-full h-full object-cover">
+                    <span class="absolute top-2 right-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Novo!</span>
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-white mt-2 text-base font-medium tracking-tight">Café com chocolate</h3>
+                    <p class="text-gray-300 mt-1 text-base font-semibold">R$50,00</p>
+                    <button class="mt-4 w-full bg-[#9a5833] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#4A3E38] transition-colors">
+                        COMPRAR
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
+                <div class="relative bg-blue-500 h-48 flex items-center justify-center">
+                    <img src="./imagens/Produto_croissant.jpg" alt="Mascavo 125g" class="w-full h-full object-cover">
+                    <span class="absolute top-2 right-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Novo!</span>
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-white mt-2 text-base font-medium tracking-tight">Café da tarde</h3>
+                    <p class="text-gray-300 mt-1 text-base font-semibold">R$30,00</p>
+                    <button class="mt-4 w-full bg-[#9a5833] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#4A3E38] transition-colors">
+                        COMPRAR
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
+                <div class="relative bg-blue-500 h-48 flex items-center justify-center">
+                     <img src="./imagens/Produto_cafe_viagem.jpg" alt="Mascavo 125g" class="w-full h-full object-cover">
+                    <span class="absolute top-2 right-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Novo!</span>
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-white mt-2 text-base font-medium tracking-tight">Café para viagem</h3>
+                    <p class="text-gray-300 mt-1 text-base font-semibold">R$35,00</p>
+                    <button class="mt-4 w-full bg-[#9a5833] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#4A3E38] transition-colors">
+                        COMPRAR
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
+                <div class="relative bg-blue-500 h-48 flex items-center justify-center">
+                     <img src="imagens/Produto_cafe.jpg" alt="Mascavo 125g" class="w-full h-full object-cover">
+                    <span class="absolute top-2 right-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Novo!</span>
+                </div>
+                <div class="p-4 text-center">
+                    <h3 class="text-white mt-2 text-base font-medium tracking-tight">Café brasileiro</h3>
+                    <p class="text-gray-300 mt-1 text-base font-semibold">R$25,00</p>
+                    <button class="mt-4 w-full bg-[#9a5833] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#4A3E38]">
+                        COMPRAR
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contato" class="bg-[#F5F3EB] p-10 px-4"> 
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        
+        <div class="md:w-1/2 order-2 md:order-1">
+            <h1 class="font-bold text-3xl mb-4 text-[#4A3E38]">
+                Code & Coffee!
+            </h1>
+            <p class="text-lg text-gray-700">
+                Café fica melhor em Pair Programming. Chame seu squad, porque debugar a vida (e o código) com amigos flui bem mais rápido. Aqui na Code&Coffee, a conexão é estável, o café é forte e as risadas não têm latência. Bora marcar esse meet presencial? Troque o Home Office pelo Coffee Office. Reserve sua mesa, fuja das distrações e garanta um slot exclusivo no nosso espaço. Wi-Fi rápido, ar gelado e café sempre quente para manter seu processador rodando liso
+            </p>
+        </div>
+
+        <div class="md:w-1/2 order-1 md:order-2">
+            <img 
+                src="imagens/logo.png" 
+                alt="Servindo café com grãos à mostra" 
+                class="w-full h-auto" 
+            />
+        </div>
+        
+    </div>
+</section>
+
+<footer class="flex flex-col space-y-10 justify-center m-10">
+
+    <nav class="flex justify-center flex-wrap gap-6 text-gray-500 font-medium">
+        <a class="hover:text-gray-900" href="#">Home</a>
+        <a class="hover:text-gray-900" href="#">Sobre</a
+        <a class="hover:text-gray-900" href="#">Galeria</a>
+        <a class="hover:text-gray-900" href="#">Contato</a>
+    </nav>
+
+    <div class="flex justify-center space-x-5">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" />
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/30/000000/linkedin-2.png" />
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
+        </a>
+     
+    </div>
+    <p class="text-center text-gray-700 font-medium">&copy; 2025 Company Ltda. All rights reservered.</p>
+</footer>
+</body>
+</html>
