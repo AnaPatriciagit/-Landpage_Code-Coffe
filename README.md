@@ -21,11 +21,8 @@ JavaScript para animações, interações e menu mobile
 Gemini para a logo da cefeteria
 
 
-📌 Conceito
+Café fica melhor em Pair Programming. Aqui na Code&Coffee, a conexão é estável, o café é forte e as conversas fluem sem travar. Bora marcar esse meet presencial?
 
-“Café fica melhor em Pair Programming. Aqui na Code&Coffee, a conexão é estável, o café é forte e as conversas fluem sem travar. Bora marcar esse meet presencial?”
-
-A proposta da página é transmitir uma vibe descontraída e divertida, como se fosse um ponto de encontro para devs debuggarem a vida e o código com mais leveza.
 
 📄 Aviso
 
